@@ -7,9 +7,11 @@ function Contato() {
         <div>
           <h1>contato</h1>
         </div>
-          <Link to={'/'}>Home</Link> <br/>
-          <Link to={'/Carrinho'}>Carrinho</Link> <br/>
-          <Link to={'/Sobre'}>Sobre</Link> <br/>
+          <ul>
+              <li><Link to={'/'}>Home</Link> </li>
+              <li><Link to={'/Carrinho'}>Carrinho</Link> </li>
+              <li><Link to={'/Sobre'}>Sobre</Link> </li>
+          </ul>
       </header>
 
 

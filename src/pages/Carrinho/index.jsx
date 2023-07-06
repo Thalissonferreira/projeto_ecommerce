@@ -7,9 +7,11 @@ function Carrinho() {
         <div>
           <h1>carrinho</h1>
         </div>
-          <Link to={'/'}>Home</Link> <br/>
-          <Link to={'/Contato'}>Contato</Link> <br/>
-          <Link to={'/Sobre'}>Sobre</Link> <br/>
+        <ul>
+           <li> <Link to={'/'}>Home</Link> </li>
+            <li><Link to={'/Contato'}>Contato</Link></li>
+            <li><Link to={'/Sobre'}>Sobre</Link></li>
+        </ul>
       </header>
 
 
