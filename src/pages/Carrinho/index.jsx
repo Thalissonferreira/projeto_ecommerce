@@ -1,17 +1,18 @@
-import {Link} from 'react-router-dom'
+import{BrowserRouter} from 'react-router-dom'
+import Header from "../../components/Header";
+
+<BrowserRouter>
+  <Header/>
+</BrowserRouter>
 
 function Carrinho() {
   return (
     <div className="carrinho">
       <header>
+        <Header/>
         <div>
-          <h1>carrinho</h1>
+          <h1>Carrinho</h1>
         </div>
-        <ul>
-           <li> <Link to={'/'}>Home</Link> </li>
-            <li><Link to={'/Contato'}>Contato</Link></li>
-            <li><Link to={'/Sobre'}>Sobre</Link></li>
-        </ul>
       </header>
 
 

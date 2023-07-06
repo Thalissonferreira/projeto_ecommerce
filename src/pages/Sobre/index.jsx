@@ -1,16 +1,21 @@
-import {Link} from 'react-router-dom'
+import{BrowserRouter} from 'react-router-dom'
+import Header from "../../components/Header";
+
+<BrowserRouter>
+  <Header/>
+</BrowserRouter>
+
 
 function sobre() {
 
   return (
     <div className="sobre">
       <header>
+        <Header/>
         <div>
           <h1> sobre</h1>
         </div>
-          <Link to={'/'}>Home</Link> <br/>
-          <Link to={'/Carrinho'}>Carrinho</Link> <br/>
-          <Link to={'/Sobre'}>Sobre</Link> <br/>
+
       </header>
 
 
