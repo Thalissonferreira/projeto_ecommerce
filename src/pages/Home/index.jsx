@@ -1,44 +1,48 @@
 import React,{useState, useEffect} from "react";
-import {Link} from 'react-router-dom'
+import  { Link } from 'react-router-dom';
+import "./home.modules.css";
 
 function Home() {
-  const [produto, setProduto] = useState([]);
+  const [products, setProducts] = useState([]);
   useEffect(() => {
-    function loadApi(){
-      const url = "https://infracode-api.onrender.com/produtos";
-
-      fetch(url).then((Response) => Response.json()).then((objeto) => {
-       setProduto(objeto);
-      }).catch((err) => {
-        console.error(err)
-      })
+    async function loadApi(){
+      const res = await fetch('https://infracode-api.onrender.com/produtos');
+      const json = await res.json();
+      
+      setProducts(json);
+      
     };
 
     loadApi();
   },[])
 
+  const options = {style: "currency", currency: "BRL"};
+
   return (
-    <div className="conteiner">
-      <header>
-        <h1>pagina ecommerce</h1>
-        <div>
-          <Link to={'/Carrinho'}>Carrinho</Link> <br/>
-          <Link to={'/Contato'}>Contato</Link> <br/>
-          <Link to={'/Sobre'}>Sobre</Link> <br/>
-        </div>
-      </header>
-      {produto.map((item)=>{
-        return(
-          <article key={item.id} className="produto">
-            <h2>{item.nome}</h2>
-            <img src={item.imagens} alt={item.nome}/>
-            <button>{item.preco}</button>
-
-          </article>
-        )
-
-      })}
+    <>
+      <div className="products-banner">
+        <img className="banner" src="/download.jpeg" alt="" />
       </div>
+
+      <div className="products-container">
+        <h2>Novidades</h2>  
+
+        <div className="products-container__wrapper">
+          {products.map((item)=>{
+            return(
+              <article key={item.id} className="products-item">
+                <img src={item.imagens[0].url} alt={item.nome}/>
+                <h3>{item.nome}</h3>
+                <span>{item.preco.toLocaleString("pt-BR", options)}</span>
+                <Link to={`/produto/${item.id}`}>Ver Produto</Link>
+
+              </article>
+            )
+
+          })}
+        </div>
+      </div>
+    </>
   );
 }
 
