@@ -82,7 +82,7 @@ const Checkout = () => {
               {itens.map((item, index) => (
                 <li key={index}>
                   <div className='image' style={{width: '150px'}}>
-                    <img style={{width: '100px', borderRadius: '8px'}} src={item.image} alt={item.nome}/>
+                    <img style={{width: '100px', height: '100px', objectFit: 'cover', borderRadius: '8px'}} src={item.image} alt={item.nome}/>
                   </div>
                   <div className='name' style={{width: '300px'}}>
                     <h4>{item.nome}</h4>
