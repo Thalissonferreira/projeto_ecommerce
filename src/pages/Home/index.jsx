@@ -44,7 +44,7 @@ function Home() {
           {products.map((item)=>{
             return(
               <article key={item.id} className="products-item">
-                <img src={item.imagens[0].url} alt={item.nome}/>
+                <img loading='lazy' src={item.imagens[0].url} alt={item.nome}/>
                 <h3>{item.nome}</h3>
                 <span>{item.preco.toLocaleString("pt-BR", options)}</span>
                 <Link to={`/produto/${item.id}`}>Ver Produto</Link>
