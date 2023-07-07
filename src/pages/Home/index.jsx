@@ -1,9 +1,12 @@
 import React,{useState, useEffect} from "react";
 import  { Link } from 'react-router-dom';
 import "./home.modules.css";
+import Layout from "../../layout";
 
 function Home() {
   const [products, setProducts] = useState([]);
+  const [cartCount, setCartCount] = useState(0);
+  
   useEffect(() => {
     async function loadApi(){
       const res = await fetch('https://infracode-api.onrender.com/produtos');
@@ -16,10 +19,20 @@ function Home() {
     loadApi();
   },[])
 
+  useEffect(() => {
+    const cart = localStorage.getItem('cart');
+    
+    if (cart) {
+        const cartItems = JSON.parse(cart);
+        const totalCount = cartItems.reduce((total, item) => total + item.quantidade, 0);
+        setCartCount(totalCount);
+    }
+  }, []);   
+
   const options = {style: "currency", currency: "BRL"};
 
   return (
-    <>
+    <Layout cartCount={cartCount} setCartCount={setCartCount}>
       <div className="products-banner">
         <img className="banner" src="/download.jpeg" alt="" />
       </div>
@@ -42,7 +55,7 @@ function Home() {
           })}
         </div>
       </div>
-    </>
+    </Layout>
   );
 }
 

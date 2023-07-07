@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Slide } from 'react-slideshow-image';
+import Layout from '../../layout';
 import "./product.modules.css";
-
 import { useParams } from 'react-router-dom'
+
 function Product() {
 
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [qtd, setQtd] = useState(1);
-  const [item, setItem] = useState([]);
+  const [cartCount, setCartCount] = useState(0);
+  const [success, setSuccess] = useState(false);
 
   const removeQtd = () => {
     let quant = qtd;
@@ -44,6 +46,16 @@ function Product() {
 
     loadApi();
   },[])
+
+  useEffect(() => {
+    const cart = localStorage.getItem('cart');
+    
+    if (cart) {
+        const cartItems = JSON.parse(cart);
+        const totalCount = cartItems.reduce((total, item) => total + item.quantidade, 0);
+        setCartCount(totalCount);
+    }
+  }, []);   
   
   const addItem = () => {
     let cart = [];
@@ -69,13 +81,28 @@ function Product() {
           : item
       );
       localStorage.setItem('cart', JSON.stringify(novosItens));
-      setItem(novosItens);
     }  else {
       const novoCarrinho = [...cart, itemCart];
       localStorage.setItem('cart', JSON.stringify(novoCarrinho));
-      setItem(novoCarrinho);
     }
+
+    calcQtdItens();
+    setSuccess(true);
   };
+
+  const calcQtdItens = () => {
+    let newQtd = 0;
+    let cart = localStorage.getItem('cart');
+
+    if(cart && cart.length > 0) {
+      cart = JSON.parse(cart);
+      for (let i = 0; i < cart.length; i++) {
+        newQtd += parseInt(cart[i].quantidade);
+      } 
+    }
+
+    setCartCount(newQtd);
+  }
 
   const divStyle = {
     display: 'flex',
@@ -89,7 +116,7 @@ function Product() {
   const options = {style: "currency", currency: "BRL"};
 
   return (
-    <>
+    <Layout cartCount={cartCount} setCartCount={setCartCount}>
       <div className='product-container'>
         <div className="product-container__wrapper">
           <div className="slide-container">
@@ -127,10 +154,13 @@ function Product() {
             </label>
             
             <button onClick={addItem}>Adicionar ao Carrinho</button>
+            {success && 
+              <span className='message-success'>Produto adicionado ao carrinho</span>
+            }
           </div>
         </div>
       </div>
-    </>
+    </Layout>
   );
 }
 export default Product;

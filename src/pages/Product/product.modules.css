@@ -95,3 +95,11 @@
     padding: 18px 0;
     cursor: pointer;
 }
+
+.message-success {
+    display: inline-block;
+    font-size: 16px;
+    margin: 18px 0;
+    color: green;
+    font-weight: bold;
+}
