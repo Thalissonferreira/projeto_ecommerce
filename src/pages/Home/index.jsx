@@ -1,14 +1,18 @@
 import React,{useState, useEffect} from "react";
-import{BrowserRouter} from 'react-router-dom'
+//import{BsFillCartPlusFill, BsFillCartDashFill} from 'react-icons/bs'
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import { Link } from "react-router-dom";
+import "./home.modules.css"
 
-<BrowserRouter>
-  <Header/>
-</BrowserRouter>
 
+
+
+ 
 
 function Home() {
   const [produto, setProduto] = useState([]);
+  const[cart, setCart]= useState([]);
   useEffect(() => {
     function loadApi(){
       const url = "https://infracode-api.onrender.com/produtos";
@@ -20,30 +24,33 @@ function Home() {
       })
     };
 
-    loadApi( );
+    loadApi();
   },[])
 
   return (
-    <div className="conteiner">
-      <Header></Header>
-      <header>
+       <div className="conteiner">
+       <Header/>
+        <header>
         <h1>pagina ecommerce</h1>
-        <div>          
-        </div>
       </header>
       {produto.map((item)=>{
         return(
           <article key={item.id} className="produto">
             <h2>{item.nome}</h2>
-            <img src={item.imagens[0].url} alt={item.nome}/>
-            <button>{item.preco}</button>
-
+            <img width={"200px"} src={item.imagens[0].url} alt={item.nome}/>
+            <button>            
+            <Link className="Imagem 1" to={`/Produto/${item.id} `}> Ver produto</Link>
+            </button>
           </article>
         )
 
       })}
+           <Footer/>
       </div>
+ 
   );
 }
+
+
 
 export default Home;

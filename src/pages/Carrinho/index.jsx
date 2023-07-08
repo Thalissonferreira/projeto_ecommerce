@@ -1,10 +1,6 @@
 import{BrowserRouter} from 'react-router-dom'
 import Header from "../../components/Header";
 
-<BrowserRouter>
-  <Header/>
-</BrowserRouter>
-
 function Carrinho() {
   return (
     <div className="carrinho">

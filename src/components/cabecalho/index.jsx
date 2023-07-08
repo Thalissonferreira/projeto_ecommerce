@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom'
-import "./header.modules.css"
-export default function Header(){
+
+export default function Heade(){
 return (
     <header>
     <nav className="navbar navbar-expand-lg ">
@@ -13,13 +13,7 @@ return (
             <span className="navbar-toggler-icon"><img width="30" height="30" src="../image/nav-cardapio.png" alt="menu--v1"/>
             </span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div className="navbar-nav">
-              <Link className="nav-link active" aria-current="page" to="/Home">Inicio</Link>
-              <Link className="nav-link" to="/Carrinho">Carrinho</Link>
-              //<Link className="nav-link" to="/">Sair</Link>
-            </div>
-          </div>
+
       </nav>
   </header>
 )}

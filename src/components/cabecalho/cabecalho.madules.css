@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
+
+.navbar {
+    background-color: #0b1e52;
+}
+
+.titulo-logo{
+    text-decoration: none;
+}
+
+.logo{
+    width: 0vw;
+    height: 100px;
+    margin-top: 2vh;
+}
+
+#logo-ecommerce{
+    margin-top: 2vh;
+    width: 180px;
+    height: 60px;
+}
+
+.nome-logo{
+    font-family: 'ABeeZee', sans-serif;
+    font-size: 1.3rem;
+    color: white;
+}
+
+
+.links{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.links>li{
+    padding: 30px;
+    margin: auto 10px;
+}
+
+#navbarNavAltMarkup{
+    justify-content: center;
+}
+
+.nav-link{
+    margin-left: 5vw;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.4rem;
+    color: white;
+    text-decoration: none; 
+}
+
+

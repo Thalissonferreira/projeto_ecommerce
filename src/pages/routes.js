@@ -5,6 +5,7 @@ import Contato from './Contato'
 import Sobre from './Sobre'
 import Login from './Login'
 import Cadastro from './Cadastro'
+import Produto from './Produto'
 
 const Rotas =() => {
     return(
@@ -15,6 +16,7 @@ const Rotas =() => {
             <Route  path='/Sobre'element={<Sobre/>}/>
             <Route path='/Home' element={<Home/>}/>
             <Route path='/Cadastro' element={<Cadastro/>}/>
+            <Route path='/Produto/:id' element={<Produto/>}/>
         </Routes>
     )
 }
