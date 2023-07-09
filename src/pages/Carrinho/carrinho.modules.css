@@ -1,0 +1,52 @@
+
+.principal{
+    padding: 2px;
+    margin: 5px;
+
+}
+img{
+    margin: 5px;
+    border-radius: 8px;
+    padding: 10px;
+    border: 2px solid  #0b1e52;
+    background-color: rgb(240, 236, 230);
+}
+
+
+.preco{
+    background-color: #0b1e52;
+    font-size: 1.5rem;
+    color: aliceblue;
+    border-radius: 8px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.excluir{
+    color: red;
+    padding: 4px;
+    border: 0;
+    font-size: 1.8rem;
+    background-color: #0b1e52;
+    margin: 10px;
+    border-radius: 10px;
+}
+.subelemento{
+    padding: 20px;
+    background-color: rgb(240, 236, 230);
+    border: 2px solid  #0b1e52; 
+    border-radius: 8px;
+    margin: 2px;
+    
+}
+.botoes{
+    background-color: rgb(240, 236, 230);
+}
+h3{
+    background-color: rgb(240, 236, 230);
+}
+.valorTotal{
+    align-items: center;
+    text-align: center;
+}
+

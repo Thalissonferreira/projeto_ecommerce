@@ -21,6 +21,11 @@ main {
   .product-info h2 {
     margin-top: 40px;
   }
+  img{
+    width: 49%;
+    height: 400px;
+
+  }
   
   .product-info ul {
     list-style: none;
@@ -33,6 +38,10 @@ main {
     color: #fff;
     border: none;
     cursor: pointer;
+  }
+  .produto-desc{
+    text-align: center;
+    align-items: center;
   }
 
   

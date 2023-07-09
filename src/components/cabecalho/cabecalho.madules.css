@@ -1,8 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
 
+.header {
+        margin-top: 40px;
+        background-color: #0b1e52;
+        color: white;
+        padding: 10px;
+        min-height: 40vh;
+      }
+
 .navbar {
     background-color: #0b1e52;
+    height: 300px;
+    margin: 100px;
 }
 
 .titulo-logo{
@@ -10,12 +20,12 @@
 }
 
 .logo{
-    width: 0vw;
-    height: 100px;
+
+    height: 300px;
     margin-top: 2vh;
 }
 
-#logo-ecommerce{
+.logo-ecommerce{
     margin-top: 2vh;
     width: 180px;
     height: 60px;
@@ -39,7 +49,7 @@
     margin: auto 10px;
 }
 
-#navbarNavAltMarkup{
+.navbar{
     justify-content: center;
 }
 

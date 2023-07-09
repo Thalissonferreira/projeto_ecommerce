@@ -1,20 +1,24 @@
 .products-container {
-    max-width: 1280px;
-    margin: 0 auto;
+
+
     width: 100%;
-    padding: 2%;
+
 }
 
 .banner {
-    width: 100%;
-    display: block;
-    object-fit: cover;
+background-position: center;
+   
+}
+.pordutos-imagens{
+    background-position: center;
+image-rendering:auto;
+
 }
 
-.products-container h2 {
+.products-container h4, h1 ,h3 {
     text-align: center;
-    font-size: 24px;
     margin: 0 0 38px 0;
+    height: 30%;
 }
 
 .products-container__wrapper {
@@ -25,6 +29,7 @@
 }
 button{
     align-items: end;
+    margin: 10px;
 }
 
 .products-item {
@@ -32,23 +37,21 @@ button{
     min-width: calc(25% - 36px);
     min-height: 250px;
     background-color: #fff;
-    padding: 15px;
+    padding: 14px;
     border-radius: 8px;
+    border: 2px solid #06075c;
     display: flex;
     flex-direction: column;
     box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
-.products-item h3{
-    text-align: center;
-    margin: 10px 0;
-}
+
 
 .products-item span {
     display: block;
     text-align: center;
     min-height: 48px;
-    flex: 1;
+    flex: 3/4;
 }
 
 .products-item a{
@@ -57,7 +60,7 @@ button{
     text-align: center;
     padding: 12px 0;
     display: block;
-    background-color: purple;
+    background-color: #06075c;
     color: #fff;
     font-weight: bold;
     font-size: 16px;
@@ -71,6 +74,10 @@ button{
     display: block;
     max-width: 300px;
     object-fit: cover;
+   
+}
+img{
+    background-position: center;
 }
   
 .subtitulo:hover {

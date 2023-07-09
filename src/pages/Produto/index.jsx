@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import {json, useParams } from 'react-router-dom'
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import "./produto.modules.css"
 
 
 function Product (){
@@ -30,7 +31,7 @@ function Product (){
         <div>
           <Header/>
           <div className='titulo'>
-          <h2>{produto.nome}</h2>
+          <h2 className='produto-desc'>{produto.nome}</h2>
           </div>
           {produto.imagens && <> 
           {produto.imagens.map((item, index) => {

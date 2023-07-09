@@ -3,6 +3,7 @@ import{BsFillCartPlusFill, BsFillCartCheckFill} from 'react-icons/bs'
 import { Link } from "react-router-dom";
 import "./home.modules.css"
 import Header from "../../components/Header";
+import Footer from "../../components/Footer"
 import { getItem, setItem } from "../services/LocalStoragefuncs";
 
 function Home() {
@@ -48,11 +49,12 @@ return (
         return(
         <>
         <section key={item.id} className="products-item">
-          <h2>Novidades</h2>  
-            <div className="products-banner">
+          <section>
+            <div className="produtos imagens">
               <img className="banner" src={item.imagens[0].url} alt={item.nome} />
             </div>
-              <h4>{item.nome}</h4>
+            </section> 
+            <h4>{item.nome}</h4>
         <button
           onClick={() =>  handleClick(item)}>
           {
@@ -64,6 +66,9 @@ return (
 
           }
         </button>
+        <button to="/Produto">
+        <Link to={`/produto/${item.id}`}>Ver Produto</Link>
+        </button>
         </section>
 
         </>
@@ -71,6 +76,7 @@ return (
         )
       })}
       </div>
+      <Footer/>
 
       </div>
   );
