@@ -48,8 +48,8 @@ import Cabecalho from "../../components/cabecalho";
 <Cabecalho/>
     <section className='area-de-login'>
         <form  className="form-login" onSubmit={fazerLogin}> 
-          <h3>Login</h3>
-          <h5>Preencha seus dados de acesso</h5>
+          <h2>LOGIN</h2>
+          <h4>Preencha seus dados de acesso</h4>
             <fieldset className="inputs-login">
               <section className="inputs-login">
                 <div className="img-input">

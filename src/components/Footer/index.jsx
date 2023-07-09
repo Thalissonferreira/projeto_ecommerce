@@ -16,8 +16,8 @@ return (
         </div>
         
         <div className="endereco-footer">
-            <p>Av. Lins de Vasconselos 1264, São Paulo, SP<p/>                    
-            </p>CEP 01537-001 / Telefone (11) 9172-1234<p/>
+            <p>Av. Souza de Vasconselos 1866, Rio de Janeiro, RJ<p/>                    
+            </p>CEP 91587-801 / Telefone (11) 9172-1234<p/>
         </div>
     </section>
 </footer>)}

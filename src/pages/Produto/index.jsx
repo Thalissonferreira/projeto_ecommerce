@@ -29,15 +29,21 @@ function Product (){
 
         <div>
           <Header/>
-          <p>{produto.nome}</p>
+          <div className='titulo'>
+          <h2>{produto.nome}</h2>
+          </div>
           {produto.imagens && <> 
           {produto.imagens.map((item, index) => {
             return(
-              <img width='200px' src={item.url} alt={item.nome} />
+              <img  src={item.url} alt={item.nome} />
             )
           
           }) 
-          }</>
+          
+          }
+          <button>{
+            produto.preco
+            }</button></>
           }
           <Footer/>
          </div>

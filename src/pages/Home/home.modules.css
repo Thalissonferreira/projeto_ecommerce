@@ -1,0 +1,136 @@
+.products-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 2%;
+}
+
+.banner {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.products-container h2 {
+    text-align: center;
+    font-size: 24px;
+    margin: 0 0 38px 0;
+}
+
+.products-container__wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 36px;
+}
+button{
+    align-items: end;
+}
+
+.products-item {
+    max-width: calc(25% - 36px);
+    min-width: calc(25% - 36px);
+    min-height: 250px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.products-item h3{
+    text-align: center;
+    margin: 10px 0;
+}
+
+.products-item span {
+    display: block;
+    text-align: center;
+    min-height: 48px;
+    flex: 1;
+}
+
+.products-item a{
+    width: 100%;
+    text-decoration: none;
+    text-align: center;
+    padding: 12px 0;
+    display: block;
+    background-color: purple;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+}
+
+.products-item img{
+    width: 100%;
+    height: 250px;
+    display: block;
+    max-width: 300px;
+    object-fit: cover;
+}
+  
+.subtitulo:hover {
+    color: #06075c;
+    font-size: 110%;
+}
+
+
+/* Responsividade */
+@media (max-width: 400px) {
+    .texto-saibamais {
+        font-size: 20px;
+    }
+  
+    .titulo,.texto-saibamais {
+        margin-left: 5%;
+    }
+  
+    .principal {
+        flex-wrap: wrap;
+    }
+  
+    .lista {
+        width: 90%;
+    }
+}
+  
+@media (min-width: 401px) and (max-width: 767px) {
+    .texto-saibamais {
+        font-size: 22px;
+    }
+  
+    .titulo,.texto-saibamais {
+        margin-left: 5%;
+    }
+  
+    .principal {
+        flex-wrap: wrap;
+    }
+  
+    .lista {
+        width: 45%;
+    }
+}
+  
+@media (min-width: 768px) and (max-width: 1200px) {
+    .texto-saibamais {
+        font-size: 24px;
+    }
+  
+    .titulo,.texto-saibamais {
+        margin-left: 2%;
+    }
+  
+    .principal {
+        flex-wrap: wrap;
+    }
+  
+    .lista {
+        width: 30%;
+    }
+}
+  

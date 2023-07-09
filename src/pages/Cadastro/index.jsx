@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import {Link} from 'react-router-dom'
 import Cabecalho from "../../components/cabecalho";
 import Footer from "../../components/Footer";
+import { clear } from '@testing-library/user-event/dist/clear';
 
 
 
@@ -38,26 +39,36 @@ function Cadastro() {
   return (
     <body>
    <Cabecalho/>
-    <div>
-      <h1>CADASTRO</h1>
-      <form className="sublogin" onSubmit  ={fazerCadastro}>
-            <label>Nome : </label>
-            <input type='text' placeholder='Seu nome' onChange={e => setNome(e.target.value)}/>
-            <br/><br/><br/>
-            <label>Email : </label>
-            <input type='email' placeholder='E-mail' onChange={e => setEmail(e.target.value)}/>
-            <br/><br/><br/>
-            <label>Senha : </label>
-            <input type='password' placeholder='Senha' onChange={e => setSenha(e.target.value)}/>
-            <br/><br/><br/>
-            <button disabled={desabilitado} >Cadastre-se</button>
-            <br/><br/><br/>
+
+
+    <section className='area-de-login'>
+ 
+      <form className="form-login" onSubmit  ={fazerCadastro}>
+      <h2>LOGIN</h2>
+          <h4>Preencha seus dados para cadastro</h4>
+          <fieldset className="inputs-login">
+            <section className="inputs-login">
+            <div className="img-input">
+              <input className='idEmail' type='text' placeholder='Digite seu nome' onChange={e => setNome(e.target.value)}/>
+              </div>
+              <div className="img-input">
+              <input className='idEmail' type='email' placeholder='Digite seu E-mail' onChange={e => setEmail(e.target.value)}/>
+              </div>
+              <div className="img-input">
+              <input className='idEmail' type='password' placeholder=' crie sua Senha' onChange={e => setSenha(e.target.value)}/>
+              </div>
+          </section>
+          </fieldset>
+            <button disabled={desabilitado}className="btn-login" >Cadastre-se</button>
+           
             <Link to={'/'}>Ja possui um conta?</Link><br/> 
-        </form>
-    </div>
+
+         
+      </form>
+      </section>
+      
     <Footer/>
     </body>
   );
 }
-
 export default Cadastro;

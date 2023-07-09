@@ -1,18 +1,14 @@
 import React,{useState, useEffect} from "react";
-//import{BsFillCartPlusFill, BsFillCartDashFill} from 'react-icons/bs'
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import{BsFillCartPlusFill, BsFillCartCheckFill} from 'react-icons/bs'
 import { Link } from "react-router-dom";
 import "./home.modules.css"
-
-
-
-
- 
+import Header from "../../components/Header";
+import { getItem, setItem } from "../services/LocalStoragefuncs";
 
 function Home() {
   const [produto, setProduto] = useState([]);
-  const[cart, setCart]= useState([]);
+  const [ cart, setCart] = useState( getItem('carrinhoYT') ||[]);
+
   useEffect(() => {
     function loadApi(){
       const url = "https://infracode-api.onrender.com/produtos";
@@ -23,31 +19,60 @@ function Home() {
         console.error(err)
       })
     };
-
     loadApi();
   },[])
 
-  return (
-       <div className="conteiner">
-       <Header/>
+  const handleClick = (objeto) => {
+    const element = cart.find((item) => item.id === objeto.id)
+    if(element) {
+      const arrFilter =cart.filter((item) => item.id !== objeto.id)
+      setCart(arrFilter)
+      setItem('carrinhoYT', arrFilter)
+    } else{
+      setCart([...cart, objeto])
+      setItem('carrinhoYT', [...cart, objeto])
+    }
+  }
+
+return (
+  
+  <div className="products-container">
+         
         <header>
-        <h1>pagina ecommerce</h1>
-      </header>
+        <Header/> 
+          <h1>Novidades</h1>
+        < h3>Clique em algum produto abaixo para mais informações!</h3>
+        </header>
+      <div className="products-container__wrapper">
       {produto.map((item)=>{
         return(
-          <article key={item.id} className="produto">
-            <h2>{item.nome}</h2>
-            <img width={"200px"} src={item.imagens[0].url} alt={item.nome}/>
-            <button>            
-            <Link className="Imagem 1" to={`/Produto/${item.id} `}> Ver produto</Link>
-            </button>
-          </article>
-        )
+        <>
+        <section key={item.id} className="products-item">
+          <h2>Novidades</h2>  
+            <div className="products-banner">
+              <img className="banner" src={item.imagens[0].url} alt={item.nome} />
+            </div>
+              <h4>{item.nome}</h4>
+        <button
+          onClick={() =>  handleClick(item)}>
+          {
+            cart.some((itemCart) => itemCart.id === item.id)? (
+              <BsFillCartCheckFill/>
+                ) :(
+                  <BsFillCartPlusFill/>
+                )
 
+          }
+        </button>
+        </section>
+
+        </>
+        
+        )
       })}
-           <Footer/>
       </div>
- 
+
+      </div>
   );
 }
 
