@@ -2,8 +2,8 @@ import React,{useState, useEffect} from "react";
 import{BsFillCartPlusFill, BsFillCartCheckFill} from 'react-icons/bs'
 import { Link } from "react-router-dom";
 import "./home.modules.css"
-import Header from "../../components/Header";
-import Footer from "../../components/Footer"
+import Footer from "../../components/Footer";
+import Header from "../../components/Header"
 import { getItem, setItem } from "../services/LocalStoragefuncs";
 
 function Home() {
@@ -38,9 +38,9 @@ function Home() {
 return (
   
   <div className="products-container">
-         
+         <Header/>
         <header>
-        <Header/> 
+      
           <h1>Novidades</h1>
         < h3>Clique em algum produto abaixo para mais informações!</h3>
         </header>
@@ -55,13 +55,13 @@ return (
             </div>
             </section> 
             <h4>{item.nome}</h4>
-        <button
+        <button className=""
           onClick={() =>  handleClick(item)}>
           {
             cart.some((itemCart) => itemCart.id === item.id)? (
               <BsFillCartCheckFill/>
-                ) :(
-                  <BsFillCartPlusFill/>
+                ) : (
+                  < BsFillCartPlusFill/>
                 )
 
           }

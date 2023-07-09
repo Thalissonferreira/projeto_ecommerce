@@ -1,15 +1,15 @@
 import {Link} from 'react-router-dom'
-
-export default function Heade(){
+import "./cabecalho.modules.css"
+export default function Header(){
 return (
     <header>
-    <nav className="navbar">
+    <nav className="headerr">
       <div className="logo">
-        <Link className="titulo-logo" to="/Home">
-            <img id="logo-ecommerce" src="/logo.png" alt="logo"/>
-        </Link>
+
+            <img className="logo-ecommerce" src="/logo.png" alt="logo"/>
+
       </div>
+
       </nav>
   </header>
 )}
-      

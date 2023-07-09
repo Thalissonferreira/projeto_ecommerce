@@ -10,17 +10,12 @@ return (
         </Link>
       </div>
           <div >
-            <div className="navbar-nav">
-
-              <Link className="nav-link active" aria-current="page" to="/Home">Inicio</Link>
-              </div>
-              <div className="navbar-nav">
-              <Link className="nav-link" to="/Carrinho">Carrinho</Link>
-              </div>
-              <div className="navbar-nav">
-              <Link className="nav-link" to="/">Sair</Link>
-            
-            </div>
+          <ul className='lista-rotas'>
+              <Link className="sair-rotas" to="/">SAIR</Link>
+              <Link className="home-rotas" aria-current="page" to="/Home">INICIO</Link>
+              <Link className="carrinho-rotas" to="/Carrinho">CARRINHO</Link>
+              
+            </ul>
           </div>
       </nav>
   </header>
